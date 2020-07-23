@@ -1,22 +1,21 @@
 
-    describe 'Dog' do
-  describe '#initialize' do
-    it 'sets the name of the dog in an instance variable @name' do
-      fido = Dog.new("Fido", "Pug")
-
-      expect(fido.instance_variable_get(:@name)).to eq("Fido")
-    end
-
-    it 'sets the breed of the dog in an instance variable @breed' do
-      fido = Dog.new("Fido", "Pug")
-
-      expect(fido.instance_variable_get(:@breed)).to eq("Pug")
-    end
-
-    it 'defaults the breed argument to "Mut" in an instance variable @breed' do
-      fido = Dog.new("Fido", "Pug")
-
-      expect(fido.instance_variable_get(:@breed)).to eq("Mut")      
-    end
+    class Dog
+  def initialize (dogs_name, dogs_breed = "Mutt")
+    @name = dogs_name
+    @breed = dogs_breed
   end
-end
+
+  def name=(dogs_name, dogs_breed = "Mutt")
+    @name = dogs_name
+    @breed = dogs_breed
+  end
+
+  def name
+    @name
+  end
+  def breed
+    @breed
+  end 
+end 
+  
+  fido = Dog.new("Fido")
